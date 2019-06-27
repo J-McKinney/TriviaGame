@@ -1,6 +1,6 @@
 $("document").ready(function () {
     var score = 0;
-    var userScore = score;
+    var userScore = 0;
     //History Question, 1stgrade-5thgrade/////////////////////////////////////////////////////////////////////////////////////////////////////////        
     var firstH = [
             ["The first Thanksgiving was celebrated by Native Americans and what other group of people?", "The Pilgrims", "The Cherokee", "The Puritans", "The Spaniards"],
@@ -46,7 +46,9 @@ $("document").ready(function () {
                 enableAnswers();
                 $(".lead").html(oneH[0]);
                 $("#ans1").html(oneH[1]).on("click", function () {
-                    userScore += 100;
+                    score = 100;
+                    userScore = userScore + score;
+                    score = 0;
                     $("#score").html(userScore);
                     disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
@@ -75,7 +77,9 @@ $("document").ready(function () {
                     disableAnswers();
                 });
                 $("#ans3").html(twoH[3]).on("click", function () {
-                    score += 200;
+                    score = 200;
+                    userScore = userScore + score;
+                    score = 0;
                     $("#score").html(score);
                     disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
@@ -92,6 +96,9 @@ $("document").ready(function () {
                 enableAnswers();
                 $(".lead").html(threeH[0]);
                 $("#ans1").html(threeH[1]).on("click", function () {
+                    score = 300;
+                    userScore = userScore + score;
+                    score = 0;
                     disableAnswers();
                 });
                 $("#ans2").html(threeH[2]).on("click", function () {
@@ -112,7 +119,9 @@ $("document").ready(function () {
                 enableAnswers();
                 $(".lead").html(fourH[0]);
                 $("#ans1").html(fourH[1]).on("mousedown", function () {
-                    userScore += 400;
+                    score = 400;
+                    userScore = userScore + score;
+                    score = 0;
                     $("#score").html(userScore);
                     disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
@@ -144,7 +153,9 @@ $("document").ready(function () {
                     disableAnswers();
                 });
                 $("#ans4").html(fiveH[4]).on("click", function () {
-                    userScore += 500;
+                    score = 500;
+                    userScore = userScore + score;
+                    score = 0;
                     $("#score").html(userScore);
                     disableAnswers();
                     alert("Correct Answer, Please Pick Another Category");
