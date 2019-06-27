@@ -1,6 +1,6 @@
 $("document").ready(function () {
     var score = 0;
-    var userScore;
+    var userScore = score;
 
     //History Question, 1stgrade-5thgrade////////////////////////////////////////////////////////////////
     var firstH = [
@@ -45,7 +45,7 @@ $("document").ready(function () {
     $("#h100").on("click", function () {
         $(".lead").html(oneH[0]);
         $("#ans1").html(oneH[1]).on("mousedown", function () {
-            userScore = score + 100;
+            userScore += 100;
             $("#score").html(userScore);
             alert("Correct Answer, Please Pick Another Category");
             // alert("Wrong Answer, Please Pick Another Category");
@@ -77,6 +77,8 @@ $("document").ready(function () {
             alert("Wrong Answer, Please Pick Another Category");
         });
         $("#ans3").html(twoH[3]).on("mousedown", function () {
+            userScore += 200;
+            $("#score").html(userScore);
             alert("Correct Answer, Please Pick Another Category");
             // alert("Wrong Answer, Please Pick Another Category");
         });
@@ -95,6 +97,8 @@ $("document").ready(function () {
             alert("Wrong Answer, Please Pick Another Category");
         });
         $("#ans2").html(threeH[2]).on("mousedown", function () {
+            userScore += 300;
+            $("#score").html(userScore);
             alert("Correct Answer, Please Pick Another Category");
             // alert("Wrong Answer, Please Pick Another Category");
         });
@@ -113,6 +117,8 @@ $("document").ready(function () {
     $("#h400").on("click", function () {
         $(".lead").html(fourH[0]);
         $("#ans1").html(fourH[1]).on("mousedown", function () {
+            userScore += 400;
+            $("#score").html(userScore);
             alert("Correct Answer, Please Pick Another Category");
             // alert("Wrong Answer, Please Pick Another Category");
         });
@@ -147,7 +153,9 @@ $("document").ready(function () {
             alert("Wrong Answer, Please Pick Another Category");
         });
         $("#ans4").html(fiveH[4]).on("mousedown", function () {
-            alert("Correct Answe, Please Pick Another Categoryr");
+            userScore += 500;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
             // alert("Wrong Answer, Please Pick Another Category");
         })
     })
