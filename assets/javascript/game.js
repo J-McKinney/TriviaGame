@@ -1,13 +1,74 @@
 $("document").ready(function () {
     var score = 0;
     var userScore = 0;
+    //math questions, 1stgrade-5thgrade////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var firstM = [
+        ["How many face cards are in a regular deck of playing cards?", "12", "14", "16", "15"],
+        ["The first day of the 20th century was…", "1 January 1901", "10 January 1901", "1 January 1910", "11 January 1910"],
+        ["How many states made up the United States before Alaska and Hawaii joined?", "48", "42", "46", "32"],
+        ["The largest number that can be pronounced with a single syllable is…", "12", "5", "2", "10"],
+        ["You peer through a window into a classroom and count 20 eyes. If each person has a normal number of eyes, how many people are in the room?", "10", "20", "15", "5"]
+    ];
+    var secondM = [
+        ["What is the area of a triangle with a height of 4 and a width of 4?", "8", "16", "12", "20"],
+        ["Solve the following equation: 3 + 2 / 1 =", "5", "6", "7", "4"],
+        ["On a class field trip, there are 4 buses taking 36 students to the zoo. Each bus has the same number of student. How many students are on each bus?", "9 students on each bus", "18 students on each bus", "12 students on each bus", "4 students on each bus"],
+        ["2 dozen kittens and 3 dozen puppies get adopted from the shelter. How many animals were adopted?", "60", "45", "75", "30"],
+        ["What number is the Roman numeral XVI?", "16", "14", "26", "24"]
+    ];
+    var thirdM = [
+        ["When writing out a fraction, the numbers above and below the vinculum are called the…", "Numerator/denominator", "Denominator/numerator", "Divider/additive", "Additive/divider"],
+        ["To the nearest multiple of 10, how many kilograms of cheese are in 110 pounds of cheese…", "50", "40", "60", "30"],
+        ["If a shopping cart contains 1 apple, 2 bananas, 3 oranges, 4 hot dogs, what percent of the cart’s total contents is fruit?", "60%", "50%", "70%", "40%"],
+        ["If the first person takes 25% of the cake and the second person takes 20% of the remainder, how much of the original cake remains?", "60%", "50%", "70%", "80%"],
+        ["How many grams are in a thousand kilograms?", "One million", "Ten million", "One hundred million", "One hundred thousand"]
+    ];
+    var fourthM = [
+
+    ];
+    //science questions, 1stgrade-5thgrade/////////////////////////////////////////////////////////////////////////////////////////////////////
+    var firstS = [
+        ["What causes tides?", "The sun", "The moon", "The earth's tilt", "The earth's polarity"],
+        ["The south pole of the magnet and the north pole of another magnet will do what?", "Push apart", "Stick together", "Conduct electicity", "Switch"],
+        ["What is the force that causes objects to fall to the ground?", "Convection", "Gravity", "Conduction", "Magnetism"],
+        ["A caterpillar changes and grows into a what?", "Junebug", "Butterfly", "Dragonfly", "Stinkbug"],
+        ["What is the biggest organ in the human body?", "Skin", "Liver", "Large intestine", "Lungs"]
+    ];
+    var secondS = [
+        ["What is H2O also known as?", "Water", "Hydroxite", "Helium oxide", "Hydrogen"],
+        ["What gas is in the air we breathe?", "Oxygen", "Carbon", "Hydrogen", "Nitrogen"],
+        ["What gas do plants breathe in that humans and animals breathe out?", "Carbon dioxide", "Oxygen", "Carbon monoxide", "Tetra-hydro carbon"],
+        ["Earth is located in what galaxy?", "The Milky Way Galaxy", "The Andromeda Galaxy", "The Spiral Galaxy", "The Wasp Galaxy"],
+        ["Which set of these are mammels?", "Lions, tigers, bears", "Whales, ducks, kangaroos", "Quails, lions, bears", "Dolphins, octopi, sea lions"]
+    ];
+    var thirdS = [
+        ["What phenomenon might be felt on the surface when two tectonic plates rub against each other?", "Volcano", "Earthquake", "Sinkhole", "Convergence"],
+        ["The hardest naturally occurring mineral is…", "Steel", "Diamond", "Titanium", "Unobtainium"],
+        ["What is the closest planet to the sun?", "Venus", "Mercury", "Earth", "Mars"],
+        ["The process by which plants eat and make energy is called…", "Endomitacin", "Photosynthesis", "Antiseptic", "Staticity"],
+        ["Does the sun orbit the Earth?", "Yes", "No", "Neither", "Both"]
+    ];
+    var fourthS = [
+        ["What is the part of the eye that controls how much light enters?", "Iris", "Cornea", "Sclera", "Pupil"],
+        ["What planet is nicknamed the 'Red Planet?'", "Mercury", "Earth", "Venus", "Mars"],
+        ["Animals that eat only meat are known as…", "Omnivores", "Herbivores", "Vegans", "Carnivores"],
+        ["How long does Earth take to revolve once around the sun?", "360", "355", "370", "365"],
+        ["What is the freezing point of water in Fahrenheit?", "30°F", "28°F", "34°F", "32°F"]
+    ];
+    var fifthS = [
+        ["The Earth is at least how many billion years old?", "6 billion", "13 billion", "4 billion", "10 billion"],
+        ["What are the three states of matter?", "Gas, liquid, and antimatter", "Water, air, and mass", "Solid, liquid, and gas", "Protons, Neutrons, and electrons"],
+        ["The Earth has 4 layers, the thickest of which is the mantle. What is the thinnest layer called?", "The Mantle", "The Inner Core", "The Crust", "The Outer Core"],
+        ["Animals without backbones are known as...", "Vertabrates", "Cephalapods", "Invertebrates", "Mammelia"],
+        ["What species can live on both water and land?", "Crustaceans", "Mammels", "Amphibians", "Cephalapods"]
+    ];
     //geography questions, 1stgrade-5thgrade/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstG = [
-        ["How many continents are there?", "7", "6", "9", "11"],
-        ["What country is Paris the capital of?", "France", "Champagne", "Lyon", "Cannes"],
-        ["In which country are the famous Pyramids of Giza?", "Egypt", "Cairo", "Budapest", "Cairo"],
-        ["In what city is the White House located?", "Washington D.C.", "Boston", "Albany", "Tulsa"],
-        ["How many states are in the United States of America?", "50", "51", "48", "52"]
+        ["How many continents are there?", "6", "9", "11", "7"],
+        ["What country is Paris the capital of?", "Champagne", "Lyon", "Cannes", "France"],
+        ["In which country are the famous Pyramids of Giza?", "Cairo", "Budapest", "Cairo", "Egypt"],
+        ["In what city is the White House located?", "Boston", "Albany", "Tulsa", "Washington D.C."],
+        ["How many states are in the United States of America?", "51", "48", "52", "50"]
     ];
     var secondG = [
         ["Which state is called the Lone Star state?", "Texas", "North Carolina", "Washington", "Arkansas"],
@@ -24,18 +85,18 @@ $("document").ready(function () {
         ["What is New York's nickname?", "The Empire State", "The Granite State", "The Apple State", "The Steel State"]
     ];
     var fourthG = [
-        ["Where is the largest desert in the world located?", "Northern Africa"],
-        ["How many kingdoms are part of the United Kingdom? 4:", "England Northern Ireland Scotland and Wales"],
-        ["Which country is the largest in size?", "Russia"],
-        ["The United States and Mexico are separated by which river?", "The Rio Grande"],
-        ["What is the southernmost continent called?", "Antarctica"]
+        ["Where is the largest desert in the world located?", "Northern Africa", "Northern Asia", "Southern Asia", "Austrailia"],
+        ["How many kingdoms are part of the United Kingdom?", "4", "5", "3", "6"],
+        ["Which country is the largest in size?", "Russia", "China", "Brazil", "Austrailia"],
+        ["The United States and Mexico are separated by which river?", "The Rio Grande", "The Colorado River", "The Grijalva River", "The Chixoy River"],
+        ["What is the southernmost continent called?", "Antarctica", "Austrailia", "South America", "Africa"]
     ];
     var fifthG = [
-        ["What is the main language spoken in the Canadian province of Quebec? French"],
-        ["Which country is both an island and a continent? Australia"],
-        ["What is the name of the sea bordered by Europe to the north and North Africa to the south? The Mediterranean Sea"],
-        ["The mountain range that includes Mount Everest is called... The Himalayas"],
-        ["Imaginary lines traversing the globe from pole to pole are called… Meridians"]
+        ["What is the main language spoken in the Canadian province of Quebec?", "French", "Spanish", "Dutch", "English"],
+        ["Which country is both an island and a continent?", "Australia", "New Zealand", "Africa", "Madagascar"],
+        ["What is the name of the sea bordered by Europe to the north and North Africa to the south?", "The Mediterranean Sea", "The Red Sea", "The Baltic Sea", "The Caspian Sea"],
+        ["The mountain range that includes Mount Everest is called...", "The Himalayas", "The Andes", "The Rockys", "The Appalachians"],
+        ["Imaginary lines traversing the globe from pole to pole are called…", "Meridians", "International Date Line", "Equator", "Tropic of Cancer"]
     ];
     //Eng & Lit Questions, 1stgrade-5thgrade/////////////////////////////////////////////////////////////////////////////////////////////////////////        
     var firstE = [
@@ -98,7 +159,7 @@ $("document").ready(function () {
         ["What ancient civilization built the Machu Picchu complex in Peru?", "The Incas", "The Mayans", "The Aztecs", "The Andeans"],
         ["The ancient Egyptian writing system was called what?", "Hieroglyphics", "Cyrillic Script", "sanskrit", "Cuneiform"],
         ["From whom did the United State buy territory in the Louisiana Purchase?", "Napoleon/France", "Edouard de Stoeckl/Russia", "Luis de onis y Gonzalez-Vera/Spain", "Antonio López de Santa Anna/Mexico"],
-        ["Who wrote the national anthem of the United States of America?", "Francis S. Key", "Nathaniel C. Towle", "Richard E. Berg", "Howard P. Willens"]
+        ["Who wrote the national anthem of the United States of America?", "Francis S. Key", "Nathaniel C. Towle", "Richard E. Berg", "Howard P. Willens"],
         ["The Battle of Gettysburg was fought in which war?", "The Civil War", "The Revolutionary War", "The War on Drugs", "World War 2"]
     ];
     var fifthH = [
@@ -108,6 +169,147 @@ $("document").ready(function () {
         ["The French and Indian war, which began in 1754, became the North American theater of this worldwide war that lasted from 1756 to 1763…", "American Revolutionary War", "The Battle of Britannia", "The Civil War", "The Seven Years War"],
         ["In which decade did Hong Kong revert from British rule…", "1960s (1968)", "1970s (1979)", "1980s (1986)", "1990s (1997)"]
     ];
+    //math questions randomly picked, 1stgrade-5thgrade/////////////////////////////////////////////////////////////
+    //                                                                        3rd answer right
+    var oneM = firstM[Math.floor(Math.random() * firstM.length)];
+    console.log(oneM);
+    $("#m100").on("click", function () {
+        $("#m100").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(oneM[0]);
+        $("#ans1").html(oneM[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(oneM[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(oneM[3]).one("click", function () {
+            userScore += 100;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans4").html(oneM[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //science questions randomly picked, 1stgrade-5thgrade////////////////////////////////////////////////
+    //                                                                     2nd answer right
+    var oneS = firstS[Math.floor(Math.random() * firstS.length)];
+    console.log(oneS);
+    $("#s100").on("click", function () {
+        $("#s100").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(oneS[0]);
+        $("#ans1").html(oneS[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(oneS[2]).one("click", function () {
+            userScore += 100;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans3").html(oneS[3]).one("click", function () {
+
+            disableAnswers();
+        });
+        $("#ans4").html(oneS[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                               1st answer right
+    var twoS = secondS[Math.floor(Math.random() * secondS.length)];
+    console.log(twoS);
+    $("#s200").on("click", function () {
+        $("#s200").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(twoS[0]);
+        $("#ans1").html(twoS[1]).one("click", function () {
+            userScore += 200;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans2").html(twoS[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(twoS[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(twoS[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                   2nd answer right
+    var threeS = thirdS[Math.floor(Math.random() * thirdS.length)];
+    console.log(threeS);
+    $("#s300").on("click", function () {
+        $("#s300").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(threeS[0]);
+        $("#ans1").html(threeS[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(threeS[2]).one("click", function () {
+            userScore += 300;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans3").html(threeS[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(threeS[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                        4th answer right
+    var fourS = fourthS[Math.floor(Math.random() * fourthS.length)];
+    console.log(fourS);
+    $("#s400").on("click", function () {
+        $("#s400").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fourS[0]);
+        $("#ans1").html(fourS[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fourS[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(fourS[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(fourS[4]).one("click", function () {
+            userScore += 400;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+    })
+    //                                                                             3rd answer right
+    var fiveS = fifthS[Math.floor(Math.random() * fifthS.length)];
+    console.log(fiveS);
+    $("#s500").on("click", function () {
+        $("#s500").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fiveS[0]);
+        $("#ans1").html(fiveS[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fiveS[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(fiveS[3]).one("click", function () {
+            userScore += 500;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans4").html(fiveS[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
     //geography questions randomly picked, 1stgrade-5thgrade/////////////////////////////////////////////////
     //                                                                   4th answer right
     var oneG = firstG[Math.floor(Math.random() * firstG.length)];
@@ -123,7 +325,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(oneG[3]).one("click", function () {
-            
+
             disableAnswers();
         });
         $("#ans4").html(oneG[4]).one("click", function () {
@@ -133,9 +335,102 @@ $("document").ready(function () {
             disableAnswers();
         });
     })
-//English & Lit questions randomly picked, 1stgrade-5thgrade///////////////////////////////////////////////////
-//                                                                    3rd answer right
-var oneE = firstE[Math.floor(Math.random() * firstE.length)];
+    //                                                                     1st answer right
+    var twoG = secondG[Math.floor(Math.random() * secondG.length)];
+    console.log(twoG);
+    $("#g200").on("click", function () {
+        $("#g200").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(twoG[0]);
+        $("#ans1").html(twoG[1]).one("click", function () {
+            userScore += 200;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans2").html(twoG[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(twoG[3]).one("click", function () {
+
+            disableAnswers();
+        });
+        $("#ans4").html(twoG[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                        3rd answer right
+    var threeG = thirdG[Math.floor(Math.random() * thirdG.length)];
+    console.log(threeG);
+    $("#g300").on("click", function () {
+        $("#g300").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(threeG[0]);
+        $("#ans1").html(threeG[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(threeG[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(threeG[3]).one("click", function () {
+            userScore += 300;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans4").html(threeG[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                           2nd answer right
+    var fourG = fourthG[Math.floor(Math.random() * fourthG.length)];
+    console.log(fourG);
+    $("#g400").on("click", function () {
+        $("#g400").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fourG[0]);
+        $("#ans1").html(fourG[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fourG[2]).one("click", function () {
+            userScore += 400;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans3").html(fourG[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(fourG[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                            2nd answer right
+    var fiveG = fifthG[Math.floor(Math.random() * fifthG.length)];
+    console.log(fiveG);
+    $("#g500").on("click", function () {
+        $("#g500").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fiveG[0]);
+        $("#ans1").html(fiveG[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fiveG[2]).one("click", function () {
+            userScore += 500;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans3").html(fiveG[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(fiveG[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //English & Lit questions randomly picked, 1stgrade-5thgrade///////////////////////////////////////////////////
+    //                                                                    3rd answer right
+    var oneE = firstE[Math.floor(Math.random() * firstE.length)];
     console.log(oneE);
     $("#e100").on("click", function () {
         $("#e100").prop("disabled", true);
