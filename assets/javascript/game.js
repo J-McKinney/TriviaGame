@@ -3,11 +3,11 @@ $("document").ready(function () {
     var userScore = 0;
     // TV potpourri, useless knowledge//////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstP = [
-        ["What is the name of the cat that wants to eat smurfs?", "Azrael", "Jonsey", "Gargumel", "Razael"],
-        ["In the sitcom 'Friends' what is the Joey Special?", "2 pizzas", "A philly cheesesteak", "A 36 inch sub", "A bucket of fried chicken"],
-        ["How old was Michael Jackson when he died?", "50", "60", "54", "57"],
-        ["Which of these is not a House from Game of Thrones?", "Baggins", "Stark", "Tully", "Lannister"],
-        ["In 'Family Guy' what is Stewie Griffin's middle name?", "Gilligan", "Gillian", "Gidian", "Gilford"]
+        ["What is the name of the cat that wants to eat smurfs?", "Jonsey", "Gargumel", "Razael", "Azrael"],
+        ["In the sitcom 'Friends' what is the Joey Special?", "A philly cheesesteak", "A 36 inch sub", "A bucket of fried chicken", "2 pizzas"],
+        ["How old was Michael Jackson when he died?", "60", "54", "57", "50"],
+        ["Which of these is not a House from Game of Thrones?", "Stark", "Tully", "Lannister", "Baggins"],
+        ["In 'Family Guy' what is Stewie Griffin's middle name?", "Gillian", "Gidian", "Gilford", "Gilligan"]
     ];
     var secondP = [
         ["What year did the Red Hot Chili Peppers release their first album?", "1984", "1986", "1982", "1988"],
@@ -17,25 +17,25 @@ $("document").ready(function () {
         ["What is the name of the pug in 'Men in Black?", "Frank", "Twitter", "Charlie", "Jibbs"]
     ];
     var thirdP =[
-        ["What character from Friends sings ‘Smelly Cat’?", "Phoebe", "Rachel", "Monica", "Emily"],
-        ["what is the name of Snoopy's avian companion?", "Woodstock", "Pigpen", "Schroeder", "Falco"],
-        ["What was the first name of fictional archaeologist Indiana Jones?", "Henry", "Benjamin", "John", "David"],
-        ["In which year did The Flintstones first air?", "1966", "1969", "1964", "1967"],
-        ["Name the first American drama, which reacted to the incident 9/11?", "The West Wing", "CSI: New York", "Law and Order: New York", "Brooklyn 99"]
+        ["What character from Friends sings ‘Smelly Cat’?", "Rachel", "Monica", "Emily", "Phoebe"],
+        ["what is the name of Snoopy's avian companion?", "Pigpen", "Schroeder", "Falco", "Woodstock"],
+        ["What was the first name of fictional archaeologist Indiana Jones?", "Benjamin", "John", "David", "Henry"],
+        ["In which year did The Flintstones first air?", "1969", "1964", "1967", "1966"],
+        ["Name the first American drama, which reacted to the incident 9/11?", "CSI: New York", "Law and Order: New York", "Brooklyn 99", "The West Wing"]
     ];
     var fourthP = [
-        ["What was the name of Ross' monkey in Friends?", "Marcel", "Jack", "Ben", "Richard"],
-        ["What was Monica and Rachel's apartment number in the first couple of episodes of 'Friends'?","5", "6", "4", "9"],
-        ["Who wrote the Star-Spangled Banner?", "Francis Scott Key", "Dolly Madison", "Benjamin Franklin", "Betsy Ross"],
-        ["Which year did the popular chilren show Sesame Street debut on PBS?", "1969", "1978", "1962", "1973"],
-        ["What is Joey's PIN number? Hint: They spell out Joey", "5639", "6395", "3695", "3569"]
+        ["What was the name of Ross' monkey in Friends?", "Jack", "Ben", "Marcel", "Richard"],
+        ["What was Monica and Rachel's apartment number in the first couple of episodes of 'Friends'?","6", "4", "5", "9"],
+        ["Who wrote the Star-Spangled Banner?", "Dolly Madison", "Benjamin Franklin", "Francis Scott Key", "Betsy Ross"],
+        ["Which year did the popular chilren show Sesame Street debut on PBS?", "1978", "1962", "1969", "1973"],
+        ["What is Joey's PIN number? Hint: They spell out Joey", "6395", "3695", "5639", "3569"]
     ];
     var fifthP = [
-        ["Which of the actors on 'Friends' unfortunately decides to whiten his teeth before going out on a first date with a girl he's had a crush on for some time?", "Ross", "Joey", "Chandler", "Gunther"],
-        ["Who was Ross' second wife?", "Emily", "Rachel", "Susan", "Carol"],
-        ["Who plays Chandler?", "Matthew Perry", "Matt LeBlanc", "David Schwimmer", "Joshua Jackson"],
-        ["What is Ross scared of?", "Spider", "Snakes", "Slugs", "Catepillars"],
-        ["what character does Phoebe dress up as for the 'Friends' halloween party", "Super-Girl", "Bat-Girl", "Spider-Girl", "Spud-nik"]
+        ["Which of the actors on 'Friends' unfortunately decides to whiten his teeth before going out on a first date with a girl he's had a crush on for some time?", "Joey", "Ross", "Chandler", "Gunther"],
+        ["Who was Ross' second wife?", "Rachel", "Emily", "Susan", "Carol"],
+        ["Who plays Chandler?", "Matt LeBlanc", "Matthew Perry", "David Schwimmer", "Joshua Jackson"],
+        ["What is Ross scared of?", "Snakes", "Spider", "Slugs", "Catepillars"],
+        ["what character does Phoebe dress up as for the 'Friends' halloween party", "Bat-Girl", "Super-Girl", "Spider-Girl", "Spud-nik"]
     ];
     //math questions, 1stgrade-5thgrade////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstM = [
@@ -320,12 +320,12 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(fiveP[2]).one("click", function () {
-            disableAnswers();
-        });
-        $("#ans3").html(fiveP[3]).one("click", function () {
             userScore += 1250;
             $("#score").html(userScore);
             alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans3").html(fiveP[3]).one("click", function () {
             disableAnswers();
         });
         $("#ans4").html(fiveP[4]).one("click", function () {
