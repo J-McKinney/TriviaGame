@@ -17,14 +17,25 @@ $("document").ready(function () {
         ["What number is the Roman numeral XVI?", "16", "14", "26", "24"]
     ];
     var thirdM = [
-        ["When writing out a fraction, the numbers above and below the vinculum are called the…", "Numerator/denominator", "Denominator/numerator", "Divider/additive", "Additive/divider"],
-        ["To the nearest multiple of 10, how many kilograms of cheese are in 110 pounds of cheese…", "50", "40", "60", "30"],
-        ["If a shopping cart contains 1 apple, 2 bananas, 3 oranges, 4 hot dogs, what percent of the cart’s total contents is fruit?", "60%", "50%", "70%", "40%"],
-        ["If the first person takes 25% of the cake and the second person takes 20% of the remainder, how much of the original cake remains?", "60%", "50%", "70%", "80%"],
-        ["How many grams are in a thousand kilograms?", "One million", "Ten million", "One hundred million", "One hundred thousand"]
+        ["When writing out a fraction, the numbers above and below the vinculum are called the…", "Denominator/numerator", "Divider/additive", "Numerator/denominator", "Additive/divider"],
+        ["To the nearest multiple of 10, how many kilograms of cheese are in 110 pounds of cheese…", "40", "60", "50", "30"],
+        ["If a shopping cart contains 1 apple, 2 bananas, 3 oranges, 4 hot dogs, what percent of the cart’s total contents is fruit?", "50%", "70%", "60%", "40%"],
+        ["If the first person takes 25% of the cake and the second person takes 20% of the remainder, how much of the original cake remains?", "50%", "70%", "60%", "80%"],
+        ["How many grams are in a thousand kilograms?", "Ten million", "One hundred million", "One million", "One hundred thousand"]
     ];
     var fourthM = [
-
+        ["If a train leaves the station and travels at 60 kilometers per hour, how much time will have passed when it arrives at a station 300 kilometers away?", "6 hours", "3 hours", "2.5 hours", "5 hours"],
+        ["The interior angles of a triangle always sum to…", "180°", "360°", "90°", "720°"],
+        ["A farmer notices that every day for the past 10 days, the number of pigeons in his field has doubled. There are 1024 pigeons in the field today, and there were 2 pigeons there the first day. How many pigeons were there yesterday?", "256", "768", "896", "512"],
+        ["You have 20 pairs of shoes, but there is only room in your closet for 8 shoes. How many shoes do you have to get rid of?", "20 shoes", "24 shoes", "28 shoes", "32 shoes"],
+        ["Solve the following equation: 5 + 3 * 4 / 2 - 1 = …", "17", "15", "32", "10"]
+    ];
+    var fifthM = [
+        ["A hexagon has how many sides?", "8", "6", "9", "7"],
+        ["A father has 7 daughters and 100 dollars. If he wants to give each daughter an equal amount of money, rounding to the nearest dollar, how much much does each daughter get?", "$16", "$14", "$12", "$13"],
+        ["You collect 48 pieces of Halloween candy. Your parents say you can eat 2 pieces per day, plus an extra piece on Saturdays and Sundays. How many weeks will it take to finish all of your candy?", "2.5 weeks", "3 weeks", "3.5 weeks", "4 weeks"],
+        ["If a football field is 100 yards long, how many feet long is the football field?", "250 ft", "300 ft", "350 ft", "400 ft"],
+        ["Solve the following equation: (2 * 4)/(5 + 3 - 1)0…", "1 7/8", "8", "0", "None of the above"]
     ];
     //science questions, 1stgrade-5thgrade/////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstS = [
@@ -78,18 +89,18 @@ $("document").ready(function () {
         ["In what country is the famous Taj Mahal located?", "India", "Nepal", "China", "Mongolia"]
     ];
     var thirdG = [
-        ["What is the longest river in the world?", "The Amazon", "The Nile", "The Ohio", "Niagra"],
-        ["On what continent is the country of Greece located?", "Europe", "Africa", "Asia", "South America"],
-        ["What is the name for a body of land that is completely surrounded by water?", "An island", "A peninsula", "A continent", "A plateau"],
-        ["What is the capital of New York?", "Albany", "Newark", "Manhattan", "Calgary"],
-        ["What is New York's nickname?", "The Empire State", "The Granite State", "The Apple State", "The Steel State"]
+        ["What is the longest river in the world?", "The Nile", "The Ohio", "The Amazon", "Niagra"],
+        ["On what continent is the country of Greece located?", "Africa", "Asia", "Europe", "South America"],
+        ["What is the name for a body of land that is completely surrounded by water?", "A peninsula", "A continent", "An island", "A plateau"],
+        ["What is the capital of New York?", "Newark", "Manhattan", "Albany", "Calgary"],
+        ["What is New York's nickname?", "The Granite State", "The Apple State", "The Empire State", "The Steel State"]
     ];
     var fourthG = [
-        ["Where is the largest desert in the world located?", "Northern Africa", "Northern Asia", "Southern Asia", "Austrailia"],
-        ["How many kingdoms are part of the United Kingdom?", "4", "5", "3", "6"],
-        ["Which country is the largest in size?", "Russia", "China", "Brazil", "Austrailia"],
-        ["The United States and Mexico are separated by which river?", "The Rio Grande", "The Colorado River", "The Grijalva River", "The Chixoy River"],
-        ["What is the southernmost continent called?", "Antarctica", "Austrailia", "South America", "Africa"]
+        ["Where is the largest desert in the world located?", "Northern Asia", "Northern Africa", "Southern Asia", "Austrailia"],
+        ["How many kingdoms are part of the United Kingdom?", "5", "4", "3", "6"],
+        ["Which country is the largest in size?", "China", "Russia", "Brazil", "Austrailia"],
+        ["The United States and Mexico are separated by which river?", "The Colorado River", "The Rio Grande", "The Grijalva River", "The Chixoy River"],
+        ["What is the southernmost continent called?", "Austrailia", "Antarctica", "South America", "Africa"]
     ];
     var fifthG = [
         ["What is the main language spoken in the Canadian province of Quebec?", "French", "Spanish", "Dutch", "English"],
@@ -190,6 +201,98 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(oneM[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                        1st answer right
+    var twoM = secondM[Math.floor(Math.random() * secondM.length)];
+    console.log(twoM);
+    $("#m200").on("click", function () {
+        $("#m200").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(twoM[0]);
+        $("#ans1").html(twoM[1]).one("click", function () {
+            userScore += 200;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans2").html(twoM[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(twoM[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(twoM[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                              3rd answer right
+    var threeM = thirdM[Math.floor(Math.random() * thirdM.length)];
+    console.log(threeM);
+    $("#m300").on("click", function () {
+        $("#m300").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(threeM[0]);
+        $("#ans1").html(threeM[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(threeM[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(threeM[3]).one("click", function () {
+            userScore += 300;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans4").html(threeM[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                        4th answer right
+    var fourM = fourthM[Math.floor(Math.random() * fourthM.length)];
+    console.log(fourM);
+    $("#m400").on("click", function () {
+        $("#m400").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fourM[0]);
+        $("#ans1").html(fourM[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fourM[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(fourM[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(fourM[4]).one("click", function () {
+            userScore += 400;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+    })
+    //                                                                       2nd answer right
+    var fiveM = fifthM[Math.floor(Math.random() * fifthM.length)];
+    console.log(fiveM);
+    $("#m500").on("click", function () {
+        $("#m500").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fiveM[0]);
+        $("#ans1").html(fiveM[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fiveM[2]).one("click", function () {
+            userScore += 500;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans3").html(fiveM[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(fiveM[4]).one("click", function () {
             disableAnswers();
         });
     })
