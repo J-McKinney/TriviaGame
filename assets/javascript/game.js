@@ -1,6 +1,42 @@
 $("document").ready(function () {
     var score = 0;
     var userScore = 0;
+    // TV potpourri, useless knowledge//////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var firstP = [
+        ["What is the name of the cat that wants to eat smurfs?", "Azrael", "Jonsey", "Gargumel", "Razael"],
+        ["In the sitcom 'Friends' what is the Joey Special?", "2 pizzas", "A philly cheesesteak", "A 36 inch sub", "A bucket of fried chicken"],
+        ["How old was Michael Jackson when he died?", "50", "60", "54", "57"],
+        ["Which of these is not a House from Game of Thrones?", "Baggins", "Stark", "Tully", "Lannister"],
+        ["In 'Family Guy' what is Stewie Griffin's middle name?", "Gilligan", "Gillian", "Gidian", "Gilford"]
+    ];
+    var secondP = [
+        ["What year did the Red Hot Chili Peppers release their first album?", "1984", "1986", "1982", "1988"],
+        ["What was the address Dori was looking for on Finding Nemo?", "P. Sherman 42 Wallaby Way Sidney", "E Sherman 42 Wallaby way Sidney", "D Sherman 42 Wallaby Way Sidney", "T Sherman 42 Wallaby Way Sidney"],
+        ["How many people were part of the main cast of the hit tv show Friends?", "6", "7", "9", "5"],
+        ["What was Disney’s first sci-fi animation?", "Atlantis", "The Little Mermaid", "Treasure Planet", "Fantasia 2000"],
+        ["What is the name of the pug in 'Men in Black?", "Frank", "Twitter", "Charlie", "Jibbs"]
+    ];
+    var thirdP =[
+        ["What character from Friends sings ‘Smelly Cat’?", "Phoebe", "Rachel", "Monica", "Emily"],
+        ["what is the name of Snoopy's avian companion?", "Woodstock", "Pigpen", "Schroeder", "Falco"],
+        ["What was the first name of fictional archaeologist Indiana Jones?", "Henry", "Benjamin", "John", "David"],
+        ["In which year did The Flintstones first air?", "1966", "1969", "1964", "1967"],
+        ["Name the first American drama, which reacted to the incident 9/11?", "The West Wing", "CSI: New York", "Law and Order: New York", "Brooklyn 99"]
+    ];
+    var fourthP = [
+        ["What was the name of Ross' monkey in Friends?", "Marcel", "Jack", "Ben", "Richard"],
+        ["What was Monica and Rachel's apartment number in the first couple of episodes of 'Friends'?","5", "6", "4", "9"],
+        ["Who wrote the Star-Spangled Banner?", "Francis Scott Key", "Dolly Madison", "Benjamin Franklin", "Betsy Ross"],
+        ["Which year did the popular chilren show Sesame Street debut on PBS?", "1969", "1978", "1962", "1973"],
+        ["What is Joey's PIN number? Hint: They spell out Joey", "5639", "6395", "3695", "3569"]
+    ];
+    var fifthP = [
+        ["Which of the actors on 'Friends' unfortunately decides to whiten his teeth before going out on a first date with a girl he's had a crush on for some time?", "Ross", "Joey", "Chandler", "Gunther"],
+        ["Who was Ross' second wife?", "Emily", "Rachel", "Susan", "Carol"],
+        ["Who plays Chandler?", "Matthew Perry", "Matt LeBlanc", "David Schwimmer", "Joshua Jackson"],
+        ["What is Ross scared of?", "Spider", "Snakes", "Slugs", "Catepillars"],
+        ["what character does Phoebe dress up as for the 'Friends' halloween party", "Super-Girl", "Bat-Girl", "Spider-Girl", "Spud-nik"]
+    ];
     //math questions, 1stgrade-5thgrade////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstM = [
         ["How many face cards are in a regular deck of playing cards?", "12", "14", "16", "15"],
@@ -180,6 +216,122 @@ $("document").ready(function () {
         ["The French and Indian war, which began in 1754, became the North American theater of this worldwide war that lasted from 1756 to 1763…", "American Revolutionary War", "The Battle of Britannia", "The Civil War", "The Seven Years War"],
         ["In which decade did Hong Kong revert from British rule…", "1960s (1968)", "1970s (1979)", "1980s (1986)", "1990s (1997)"]
     ];
+    //TV questions randomly picked ///////////////////////////////////////////////////////////////////////////////
+    //                                                                          4th answer right
+    var oneP = firstP[Math.floor(Math.random() * firstP.length)];
+    console.log(oneP);
+    $("#p100").on("click", function () {
+        $("#p100").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(oneP[0]);
+        $("#ans1").html(oneP[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(oneP[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(oneP[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(oneP[4]).one("click", function () {
+            userScore += 250;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+    })
+    //                                                                      1st answer right
+    var twoP = secondP[Math.floor(Math.random() * secondP.length)];
+    console.log(twoP);
+    $("#p200").on("click", function () {
+        $("#p200").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(twoP[0]);
+        $("#ans1").html(twoP[1]).one("click", function () {
+            userScore += 500;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans2").html(twoP[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(twoP[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(twoP[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                          4th answer right
+    var threeP = thirdP[Math.floor(Math.random() * thirdP.length)];
+    console.log(threeP);
+    $("#p300").on("click", function () {
+        $("#p300").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(threeP[0]);
+        $("#ans1").html(threeP[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(threeP[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(threeP[3]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans4").html(threeP[4]).one("click", function () {
+            userScore += 750;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+    })
+    //                                                                        3rd answer right
+    var fourP = fourthP[Math.floor(Math.random() * fourthP.length)];
+    console.log(fourP);
+    $("#p400").on("click", function () {
+        $("#p400").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fourP[0]);
+        $("#ans1").html(fourP[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fourP[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(fourP[3]).one("click", function () {
+            userScore += 1000;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans4").html(fourP[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
+    //                                                                       2nd answer right
+    var fiveP = fifthP[Math.floor(Math.random() * fifthP.length)];
+    console.log(fiveP);
+    $("#p500").on("click", function () {
+        $("#p500").prop("disabled", true);
+        enableAnswers();
+        $(".lead").html(fiveP[0]);
+        $("#ans1").html(fiveP[1]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans2").html(fiveP[2]).one("click", function () {
+            disableAnswers();
+        });
+        $("#ans3").html(fiveP[3]).one("click", function () {
+            userScore += 1250;
+            $("#score").html(userScore);
+            alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans4").html(fiveP[4]).one("click", function () {
+            disableAnswers();
+        });
+    })
     //math questions randomly picked, 1stgrade-5thgrade/////////////////////////////////////////////////////////////
     //                                                                        3rd answer right
     var oneM = firstM[Math.floor(Math.random() * firstM.length)];
@@ -508,7 +660,7 @@ $("document").ready(function () {
             disableAnswers();
         });
     })
-    //                                                                            2nd answer right
+    //                                                                            1st answer right
     var fiveG = fifthG[Math.floor(Math.random() * fifthG.length)];
     console.log(fiveG);
     $("#g500").on("click", function () {
@@ -516,12 +668,12 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveG[0]);
         $("#ans1").html(fiveG[1]).one("click", function () {
-            disableAnswers();
-        });
-        $("#ans2").html(fiveG[2]).one("click", function () {
             userScore += 500;
             $("#score").html(userScore);
             alert("Correct Answer, Please Pick Another Category");
+            disableAnswers();
+        });
+        $("#ans2").html(fiveG[2]).one("click", function () {
             disableAnswers();
         });
         $("#ans3").html(fiveG[3]).one("click", function () {
@@ -780,16 +932,7 @@ $("document").ready(function () {
     }
 
 
-
-
-
-
-
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // document.body.onkeyup = function (e) {
+// document.body.onkeyup = function (e) {
     //     if (e.keyCode == 32) {
     //         reset();
     //     }
@@ -798,4 +941,5 @@ $("document").ready(function () {
     //links to a new html page for the questions
     // for the other window
     //id="close" onclick="window.close()">
+
 })
