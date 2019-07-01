@@ -225,6 +225,7 @@ $("document").ready(function () {
     console.log(oneP);
     $("#p100").on("click", function () {
         $("#p100").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(oneP[0]);
@@ -254,6 +255,7 @@ $("document").ready(function () {
     console.log(twoP);
     $("#p200").on("click", function () {
         $("#p200").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(twoP[0]);
@@ -283,6 +285,7 @@ $("document").ready(function () {
     console.log(threeP);
     $("#p300").on("click", function () {
         $("#p300").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(threeP[0]);
@@ -312,6 +315,7 @@ $("document").ready(function () {
     console.log(fourP);
     $("#p400").on("click", function () {
         $("#p400").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(fourP[0]);
@@ -341,6 +345,7 @@ $("document").ready(function () {
     console.log(fiveP);
     $("#p500").on("click", function () {
         $("#p500").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(fiveP[0]);
@@ -371,6 +376,7 @@ $("document").ready(function () {
     console.log(oneM);
     $("#m100").on("click", function () {
         $("#m100").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(oneM[0]);
@@ -400,6 +406,7 @@ $("document").ready(function () {
     console.log(twoM);
     $("#m200").on("click", function () {
         $("#m200").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(twoM[0]);
@@ -429,6 +436,7 @@ $("document").ready(function () {
     console.log(threeM);
     $("#m300").on("click", function () {
         $("#m300").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(threeM[0]);
@@ -458,6 +466,7 @@ $("document").ready(function () {
     console.log(fourM);
     $("#m400").on("click", function () {
         $("#m400").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(fourM[0]);
@@ -487,6 +496,7 @@ $("document").ready(function () {
     console.log(fiveM);
     $("#m500").on("click", function () {
         $("#m500").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(fiveM[0]);
@@ -517,6 +527,7 @@ $("document").ready(function () {
     console.log(oneS);
     $("#s100").on("click", function () {
         $("#s100").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(oneS[0]);
@@ -546,6 +557,7 @@ $("document").ready(function () {
     console.log(twoS);
     $("#s200").on("click", function () {
         $("#s200").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(twoS[0]);
@@ -575,6 +587,7 @@ $("document").ready(function () {
     console.log(threeS);
     $("#s300").on("click", function () {
         $("#s300").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(threeS[0]);
@@ -604,6 +617,7 @@ $("document").ready(function () {
     console.log(fourS);
     $("#s400").on("click", function () {
         $("#s400").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(fourS[0]);
@@ -633,6 +647,7 @@ $("document").ready(function () {
     console.log(fiveS);
     $("#s500").on("click", function () {
         $("#s500").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(fiveS[0]);
@@ -663,6 +678,7 @@ $("document").ready(function () {
     console.log(oneG);
     $("#g100").on("click", function () {
         $("#g100").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(oneG[0]);
@@ -692,6 +708,7 @@ $("document").ready(function () {
     console.log(twoG);
     $("#g200").on("click", function () {
         $("#g200").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(twoG[0]);
@@ -721,6 +738,7 @@ $("document").ready(function () {
     console.log(threeG);
     $("#g300").on("click", function () {
         $("#g300").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(threeG[0]);
@@ -750,6 +768,7 @@ $("document").ready(function () {
     console.log(fourG);
     $("#g400").on("click", function () {
         $("#g400").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(fourG[0]);
@@ -779,6 +798,7 @@ $("document").ready(function () {
     console.log(fiveG);
     $("#g500").on("click", function () {
         $("#g500").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(fiveG[0]);
@@ -809,6 +829,7 @@ $("document").ready(function () {
     console.log(oneE);
     $("#e100").on("click", function () {
         $("#e100").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(oneE[0]);
@@ -838,6 +859,7 @@ $("document").ready(function () {
     console.log(twoE);
     $("#e200").on("click", function () {
         $("#e200").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(twoE[0]);
@@ -867,6 +889,7 @@ $("document").ready(function () {
     console.log(threeE);
     $("#e300").on("click", function () {
         $("#e300").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(threeE[0]);
@@ -896,6 +919,7 @@ $("document").ready(function () {
     console.log(fourE);
     $("#e400").on("click", function () {
         $("#e400").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(fourE[0]);
@@ -925,6 +949,7 @@ $("document").ready(function () {
     console.log(fiveE);
     $("#e500").on("click", function () {
         $("#e500").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(fiveE[0]);
@@ -956,7 +981,7 @@ $("document").ready(function () {
     console.log(oneH);
     $("#h100").on("click", function () {
         $("#h100").prop("disabled", true);
-        run();
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(oneH[0]);
@@ -986,6 +1011,7 @@ $("document").ready(function () {
     console.log(twoH);
     $("#h200").on("click", function () {
         $("#h200").prop("disabled", true);
+        run3();
         blue();
         enableAnswers();
         $(".lead").html(twoH[0]);
@@ -1015,6 +1041,7 @@ $("document").ready(function () {
     console.log(threeH);
     $("#h300").on("click", function () {
         $("#h300").prop("disabled", true);
+        run2();
         blue();
         enableAnswers();
         $(".lead").html(threeH[0]);
@@ -1044,6 +1071,7 @@ $("document").ready(function () {
     console.log(fourH);
     $("#h400").on("click", function () {
         $("#h400").prop("disabled", true);
+        run1();
         blue();
         enableAnswers();
         $(".lead").html(fourH[0]);
@@ -1073,6 +1101,7 @@ $("document").ready(function () {
     console.log(fiveH);
     $("#h500").on("click", function () {
         $("#h500").prop("disabled", true);
+        run4();
         blue();
         enableAnswers();
         $(".lead").html(fiveH[0]);
@@ -1146,30 +1175,99 @@ $("document").ready(function () {
         $("#ans4").css("background-color", "green");
     }
     ///////////////////////////////////////////////////////////////////////////////
-    function run() {
+    function run1() {
+        number = 11;
         clearInterval(intervalId);
-        intervalId = setInterval(decrement, 1000);
+        intervalId = setInterval(decrement1, 1000);
     }
-    function decrement() {
+    function decrement1() {
         number--;
         $("#timer").html("<h3>" + number + "</h3>");
         if (number === 0) {
             stop();
-            showAll();
+            showAll1();
             stopAll();
             alert("Time's Up! Please pick another question.");
         }
     }
-    function stop() {
+    ////////////
+    function run2() {
+        number = 11;
         clearInterval(intervalId);
+        intervalId = setInterval(decrement2, 1000);
     }
-    ////////////////////////////////////////////////////////////////////////////
-    function showAll() {
-        $("#ans1").css("background-color", "red");
+    function decrement2() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll2();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    ////////////
+    function run3() {
+        number = 11;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement3, 1000);
+    }
+    function decrement3() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll3();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    /////////////
+    function run4() {
+        number = 11;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement4, 1000);
+    }
+    function decrement4() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll4();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    ////////////
+    function stop() {
+        clearTimeout(intervalId);
+    }
+    ///////////////////////////////////////////////////////////////////////
+    function showAll1() {
+        $("#ans1").css("background-color", "green");
         $("#ans2").css("background-color", "red");
         $("#ans3").css("background-color", "red");
         $("#ans4").css("background-color", "red");
     }
+    function showAll2() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "green");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function showAll3() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "green");
+        $("#ans4").css("background-color", "red");
+    }
+    function showAll4() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "green");
+    }
+    ///////////////////////////////////////////////////////////////////////////
     function stopAll() {
         $("#ans1").prop("disabled", true);
         $("#ans2").prop("disabled", true);
