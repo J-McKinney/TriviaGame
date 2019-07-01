@@ -1,6 +1,7 @@
 $("document").ready(function () {
     var score = 0;
     var userScore = 0;
+    var rightAns = 0;
     // TV potpourri, useless knowledge//////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstP = [
         ["What is the name of the cat that wants to eat smurfs?", "Jonsey", "Gargumel", "Razael", "Azrael"],
@@ -253,6 +254,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 250;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
     })
@@ -271,7 +274,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 500;
             $("#score").html(userScore);
-            alert("Correct, Pick another Category")
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(twoP[2]).one("click", function () {
@@ -332,6 +336,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 750;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
     })
@@ -364,6 +370,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 1000;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(fourP[4]).one("click", function () {
@@ -396,6 +404,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 1250;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(fiveP[3]).one("click", function () {
@@ -443,6 +453,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 100;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(oneM[4]).one("click", function () {
@@ -468,6 +480,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 200;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(twoM[2]).one("click", function () {
@@ -521,6 +535,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 300;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(threeM[4]).one("click", function () {
@@ -567,6 +583,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 400;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
     })
@@ -592,6 +610,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 500;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(fiveM[3]).one("click", function () {
@@ -632,6 +652,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 100;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(oneS[3]).one("click", function () {
@@ -664,6 +686,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 200;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(twoS[2]).one("click", function () {
@@ -710,6 +734,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 300;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(threeS[3]).one("click", function () {
@@ -763,6 +789,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 400;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
     })
@@ -795,6 +823,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 500;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(fiveS[4]).one("click", function () {
@@ -842,6 +872,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 100;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
     })
@@ -860,6 +892,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 200;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(twoG[2]).one("click", function () {
@@ -874,7 +908,6 @@ $("document").ready(function () {
             $("#ans2").css("background-color", "red");
             $("#ans3").css("background-color", "red");
             $("#ans4").css("background-color", "red");
-
             disableAnswers();
         });
         $("#ans4").html(twoG[4]).one("click", function () {
@@ -914,6 +947,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 300;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(threeG[4]).one("click", function () {
@@ -946,6 +981,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 400;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(fourG[3]).one("click", function () {
@@ -978,6 +1015,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 500;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(fiveG[2]).one("click", function () {
@@ -1032,6 +1071,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 100;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(oneE[4]).one("click", function () {
@@ -1078,6 +1119,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 200;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
     })
@@ -1103,6 +1146,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 300;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(threeE[3]).one("click", function () {
@@ -1135,6 +1180,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 400;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(fourE[2]).one("click", function () {
@@ -1181,6 +1228,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 500;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(fiveE[3]).one("click", function () {
@@ -1215,6 +1264,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 100;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(oneH[2]).one("click", function () {
@@ -1268,6 +1319,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 200;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans4").html(twoH[4]).one("click", function () {
@@ -1300,6 +1353,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 300;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans3").html(threeH[3]).one("click", function () {
@@ -1332,6 +1387,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "red");
             userScore += 400;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         });
         $("#ans2").html(fourH[2]).one("click", function () {
@@ -1392,6 +1449,8 @@ $("document").ready(function () {
             $("#ans4").css("background-color", "green");
             userScore += 500;
             $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
             disableAnswers();
         })
     })

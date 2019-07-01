@@ -24,7 +24,23 @@ h1 {
 #scrBrd {
     text-align: center;
 }
+
 .lead {
+    text-align: center;
+}
+
+#rightAns {
+    text-align: right;
+    /* font-weight: bold; */
+    font-size: 28px;
+}
+
+#correct {
+    font-size: 30px;
+    text-align: left;
+}
+
+h2 {
     text-align: center;
 }
 
