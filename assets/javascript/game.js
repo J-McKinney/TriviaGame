@@ -2,6 +2,8 @@ $("document").ready(function () {
     var score = 0;
     var userScore = 0;
     var rightAns = 0;
+    var number = 10;
+    var intervalId;
     // TV potpourri, useless knowledge//////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstP = [
         ["What is the name of the cat that wants to eat smurfs?", "Jonsey", "Gargumel", "Razael", "Azrael"],
@@ -42,7 +44,7 @@ $("document").ready(function () {
     var firstM = [
         ["How many face cards are in a regular deck of playing cards?", "12", "14", "16", "15"],
         ["The first day of the 20th century was…", "1 January 1901", "10 January 1901", "1 January 1910", "11 January 1910"],
-        ["How many states made up the United States before Alaska and Hawaii joined?","42", "46",  "48", "32"],
+        ["How many states made up the United States before Alaska and Hawaii joined?", "42", "46", "48", "32"],
         ["The largest number that can be pronounced with a single syllable is…", "5", "2", "12", "10"],
         ["You peer through a window into a classroom and count 20 eyes. If each person has a normal number of eyes, how many people are in the room?", "20", "15", "10", "5"]
     ];
@@ -227,31 +229,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(oneP[0]);
         $("#ans1").html(oneP[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(oneP[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(oneP[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(oneP[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 250;
             $("#score").html(userScore);
             rightAns += 1;
@@ -268,10 +258,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(twoP[0]);
         $("#ans1").html(twoP[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 500;
             $("#score").html(userScore);
             rightAns += 1;
@@ -279,24 +266,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(twoP[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(twoP[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(twoP[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -309,31 +287,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(threeP[0]);
         $("#ans1").html(threeP[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(threeP[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(threeP[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(threeP[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 750;
             $("#score").html(userScore);
             rightAns += 1;
@@ -350,24 +316,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fourP[0]);
         $("#ans1").html(fourP[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(fourP[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(fourP[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 1000;
             $("#score").html(userScore);
             rightAns += 1;
@@ -375,10 +332,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(fourP[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -391,17 +345,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveP[0]);
         $("#ans1").html(fiveP[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(fiveP[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 1250;
             $("#score").html(userScore);
             rightAns += 1;
@@ -409,17 +357,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(fiveP[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(fiveP[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -433,24 +375,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(oneM[0]);
         $("#ans1").html(oneM[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(oneM[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(oneM[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 100;
             $("#score").html(userScore);
             rightAns += 1;
@@ -458,10 +391,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(oneM[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -474,10 +404,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(twoM[0]);
         $("#ans1").html(twoM[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 200;
             $("#score").html(userScore);
             rightAns += 1;
@@ -485,24 +412,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(twoM[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(twoM[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(twoM[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -515,24 +433,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(threeM[0]);
         $("#ans1").html(threeM[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(threeM[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(threeM[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 300;
             $("#score").html(userScore);
             rightAns += 1;
@@ -540,10 +449,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(threeM[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -556,31 +462,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fourM[0]);
         $("#ans1").html(fourM[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(fourM[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(fourM[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(fourM[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 400;
             $("#score").html(userScore);
             rightAns += 1;
@@ -597,17 +491,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveM[0]);
         $("#ans1").html(fiveM[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(fiveM[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 500;
             $("#score").html(userScore);
             rightAns += 1;
@@ -615,17 +503,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(fiveM[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(fiveM[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -639,17 +521,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(oneS[0]);
         $("#ans1").html(oneS[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(oneS[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 100;
             $("#score").html(userScore);
             rightAns += 1;
@@ -657,17 +533,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(oneS[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(oneS[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -680,10 +550,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(twoS[0]);
         $("#ans1").html(twoS[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 200;
             $("#score").html(userScore);
             rightAns += 1;
@@ -691,24 +558,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(twoS[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(twoS[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(twoS[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -721,17 +579,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(threeS[0]);
         $("#ans1").html(threeS[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(threeS[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 300;
             $("#score").html(userScore);
             rightAns += 1;
@@ -739,17 +591,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(threeS[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(threeS[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -762,31 +608,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fourS[0]);
         $("#ans1").html(fourS[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(fourS[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(fourS[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(fourS[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 400;
             $("#score").html(userScore);
             rightAns += 1;
@@ -803,24 +637,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveS[0]);
         $("#ans1").html(fiveS[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(fiveS[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(fiveS[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 500;
             $("#score").html(userScore);
             rightAns += 1;
@@ -828,10 +653,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(fiveS[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -845,31 +667,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(oneG[0]);
         $("#ans1").html(oneG[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(oneG[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(oneG[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(oneG[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 100;
             $("#score").html(userScore);
             rightAns += 1;
@@ -886,10 +696,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(twoG[0]);
         $("#ans1").html(twoG[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 200;
             $("#score").html(userScore);
             rightAns += 1;
@@ -897,24 +704,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(twoG[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(twoG[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(twoG[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -927,24 +725,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(threeG[0]);
         $("#ans1").html(threeG[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(threeG[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(threeG[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 300;
             $("#score").html(userScore);
             rightAns += 1;
@@ -952,10 +741,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(threeG[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -968,17 +754,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fourG[0]);
         $("#ans1").html(fourG[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(fourG[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 400;
             $("#score").html(userScore);
             rightAns += 1;
@@ -986,17 +766,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(fourG[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(fourG[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -1009,10 +783,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveG[0]);
         $("#ans1").html(fiveG[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 500;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1020,24 +791,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(fiveG[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(fiveG[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(fiveG[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -1051,24 +813,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(oneE[0]);
         $("#ans1").html(oneE[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(oneE[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(oneE[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 100;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1076,10 +829,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(oneE[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -1092,31 +842,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(twoE[0]);
         $("#ans1").html(twoE[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(twoE[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(twoE[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(twoE[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 200;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1133,17 +871,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(threeE[0]);
         $("#ans1").html(threeE[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(threeE[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 300;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1151,17 +883,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(threeE[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(threeE[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -1174,10 +900,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fourE[0]);
         $("#ans1").html(fourE[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 400;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1185,24 +908,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(fourE[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(fourE[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(fourE[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -1215,17 +929,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveE[0]);
         $("#ans1").html(fiveE[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(fiveE[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 500;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1233,17 +941,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(fiveE[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(fiveE[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -1254,14 +956,12 @@ $("document").ready(function () {
     console.log(oneH);
     $("#h100").on("click", function () {
         $("#h100").prop("disabled", true);
+        run();
         blue();
         enableAnswers();
         $(".lead").html(oneH[0]);
         $("#ans1").html(oneH[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 100;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1269,24 +969,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(oneH[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(oneH[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(oneH[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -1299,24 +990,15 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(twoH[0]);
         $("#ans1").html(twoH[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans2").html(twoH[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
         $("#ans3").html(twoH[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             userScore += 200;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1324,10 +1006,7 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans4").html(twoH[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "green");
-            $("#ans4").css("background-color", "red");
+            answerThree();
             disableAnswers();
         });
     })
@@ -1340,17 +1019,11 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(threeH[0]);
         $("#ans1").html(threeH[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans2").html(threeH[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             userScore += 300;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1358,17 +1031,11 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans3").html(threeH[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
         $("#ans4").html(threeH[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "green");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerTwo();
             disableAnswers();
         });
     })
@@ -1381,10 +1048,7 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fourH[0]);
         $("#ans1").html(fourH[1]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             userScore += 400;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1392,24 +1056,15 @@ $("document").ready(function () {
             disableAnswers();
         });
         $("#ans2").html(fourH[2]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans3").html(fourH[3]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
         $("#ans4").html(fourH[4]).one("click", function () {
-            $("#ans1").css("background-color", "green");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "red");
+            answerOne();
             disableAnswers();
         });
     })
@@ -1422,31 +1077,19 @@ $("document").ready(function () {
         enableAnswers();
         $(".lead").html(fiveH[0]);
         $("#ans1").html(fiveH[1]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans2").html(fiveH[2]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans3").html(fiveH[3]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             disableAnswers();
         });
         $("#ans4").html(fiveH[4]).one("click", function () {
-            $("#ans1").css("background-color", "red");
-            $("#ans2").css("background-color", "red");
-            $("#ans3").css("background-color", "red");
-            $("#ans4").css("background-color", "green");
+            answerFour();
             userScore += 500;
             $("#score").html(userScore);
             rightAns += 1;
@@ -1454,99 +1097,84 @@ $("document").ready(function () {
             disableAnswers();
         })
     })
-
-    // function tooLate() {
-    //     alert("You took too Long...")
-    //     disableAnswers();
-    // }
-
+    /////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
     function disableAnswers() {
         $("#ans1").prop("disabled", true);
         $("#ans2").prop("disabled", true);
         $("#ans3").prop("disabled", true);
         $("#ans4").prop("disabled", true);
     }
-
+    /////////////////////////////////////////////////////////////////////
     function enableAnswers() {
         $("#ans1").prop("disabled", false);
         $("#ans2").prop("disabled", false);
         $("#ans3").prop("disabled", false);
         $("#ans4").prop("disabled", false);
     }
-
+    ////////////////////////////////////////////////////////////////////
     function blue() {
-        $("#ans1").css("background-color", "blue");
-        $("#ans2").css("background-color", "blue");
-        $("#ans3").css("background-color", "blue");
-        $("#ans4").css("background-color", "blue");
+        $("#ans1").css("background-color", "#007bff");
+        $("#ans2").css("background-color", "#007bff");
+        $("#ans3").css("background-color", "#007bff");
+        $("#ans4").css("background-color", "#007bff");
     }
-
-
-    // document.body.onkeyup = function (e) {
-    //     if (e.keyCode == 32) {
-    //         reset();
-    //     }
-    // }
-    //<a href="" target="_blank"></a>
-    //links to a new html page for the questions
-    // for the other window
-    //id="close" onclick="window.close()">
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    //  Interval Demonstration
-    //  Set our number counter to 100.
-    // var number = 100;
-
-    //  Variable that will hold our interval ID when we execute
-    //  the "run" function
-    // var intervalId;
-
-    //  When the stop button gets clicked, run the stop function.
-    // $("#stop").on("click", stop);
-
-    //  When the resume button gets clicked, execute the run function.
-    // $("#resume").on("click", run);
-
-    //  The run function sets an interval
-    //  that runs the decrement function once a second.
-    //  *****BUG FIX******** 
-    //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
-    // function run() {
-    //   clearInterval(intervalId);
-    //   intervalId = setInterval(decrement, 1000);
-    // }
-
-    //  The decrement function.
-    // function decrement() {
-
-    //  Decrease number by one.
-    //   number--;
-
-    //  Show the number in the #show-number tag.
-    //   $("#show-number").html("<h2>" + number + "</h2>");
-
-
-    //  Once number hits zero...
-    //   if (number === 0) {
-
-    //  ...run the stop function.
-    // stop();
-
-    //  Alert the user that time is up.
-    //     alert("Time Up!");
-    //   }
-    // }
-
-    //  The stop function
-    // function stop() {
-
-    //  Clears our intervalId
-    //  We just pass the name of the interval
-    //  to the clearInterval function.
-    //   clearInterval(intervalId);
-    // }
-
-    //  Execute the run function.
-    // run();
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
+    function answerOne() {
+        $("#ans1").css("background-color", "green");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function answerTwo() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "green");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function answerThree() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "green");
+        $("#ans4").css("background-color", "red");
+    }
+    function answerFour() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "green");
+    }
+    ///////////////////////////////////////////////////////////////////////////////
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
+    function decrement() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    function stop() {
+        clearInterval(intervalId);
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    function showAll() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function stopAll() {
+        $("#ans1").prop("disabled", true);
+        $("#ans2").prop("disabled", true);
+        $("#ans3").prop("disabled", true);
+        $("#ans4").prop("disabled", true);
+    }
 
 })
