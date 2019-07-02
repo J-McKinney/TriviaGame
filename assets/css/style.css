@@ -1,4 +1,10 @@
-.col-md-2 {
+body {
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.col-md-2,
+#fj {
     text-align: center
 }
 

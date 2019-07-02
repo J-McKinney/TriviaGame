@@ -1,5 +1,6 @@
 $("document").ready(function () {
     var score = 0;
+    var fj;
     var userScore = 0;
     var rightAns = 0;
     var number = 10;
@@ -27,18 +28,18 @@ $("document").ready(function () {
         ["Name the first American drama, which reacted to the incident 9/11?", "CSI: New York", "Law and Order: New York", "Brooklyn 99", "The West Wing"]
     ];
     var fourthP = [
-        ["What was the name of Ross' monkey in Friends?", "Jack", "Ben", "Marcel", "Richard"],
+        ["What was the name of Ross' monkey in 'Friends'?", "Jack", "Ben", "Marcel", "Richard"],
         ["What was Monica and Rachel's apartment number in the first couple of episodes of 'Friends'?", "6", "4", "5", "9"],
         ["Who wrote the Star-Spangled Banner?", "Dolly Madison", "Benjamin Franklin", "Francis Scott Key", "Betsy Ross"],
-        ["Which year did the popular chilren show Sesame Street debut on PBS?", "1978", "1962", "1969", "1973"],
-        ["What is Joey's PIN number? Hint: They spell out Joey", "6395", "3695", "5639", "3569"]
+        ["Which year did the popular chilren's show Sesame Street debut on PBS?", "1978", "1962", "1969", "1973"],
+        ["What is Joey's from the tv show 'Friends' PIN number? Hint: They spell out Joey", "6395", "3695", "5639", "3569"]
     ];
     var fifthP = [
         ["Which of the actors on 'Friends' unfortunately decides to whiten his teeth before going out on a first date with a girl he's had a crush on for some time?", "Joey", "Ross", "Chandler", "Gunther"],
-        ["Who was Ross' second wife?", "Rachel", "Emily", "Susan", "Carol"],
-        ["Who plays Chandler?", "Matt LeBlanc", "Matthew Perry", "David Schwimmer", "Joshua Jackson"],
-        ["What is Ross scared of?", "Snakes", "Spider", "Slugs", "Catepillars"],
-        ["what character does Phoebe dress up as for the 'Friends' halloween party", "Bat-Girl", "Super-Girl", "Spider-Girl", "Spud-nik"]
+        ["Who was Ross' second wife on the tv show 'Friends'?", "Rachel", "Emily", "Susan", "Carol"],
+        ["What actor plays Chandler in the tv show 'Friends'?", "Matt LeBlanc", "Matthew Perry", "David Schwimmer", "Joshua Jackson"],
+        ["On the tv show 'Friends,' what is the character, Ross, scared of?", "Snakes", "Spider", "Slugs", "Catepillars"],
+        ["what does Pheobe on 'Friends' dress up as for the halloween party", "Bat-Girl", "Super-Girl", "Spider-Girl", "Spud-nik"]
     ];
     //math questions, 1stgrade-5thgrade////////////////////////////////////////////////////////////////////////////////////////////////////////
     var firstM = [
@@ -135,17 +136,17 @@ $("document").ready(function () {
         ["What is New York's nickname?", "The Granite State", "The Apple State", "The Empire State", "The Steel State"]
     ];
     var fourthG = [
-        ["Where is the largest desert in the world located?", "Northern Asia", "Northern Africa", "Southern Asia", "Austrailia"],
+        ["Where is the largest desert in the world located?", "Northern Asia", "Northern Africa", "Southern Asia", "Australia"],
         ["How many kingdoms are part of the United Kingdom?", "5", "4", "3", "6"],
-        ["Which country is the largest in size?", "China", "Russia", "Brazil", "Austrailia"],
+        ["Which country is the largest in size?", "China", "Russia", "Brazil", "Australia"],
         ["The United States and Mexico are separated by which river?", "The Colorado River", "The Rio Grande", "The Grijalva River", "The Chixoy River"],
-        ["What is the southernmost continent called?", "Austrailia", "Antarctica", "South America", "Africa"]
+        ["What is the southernmost continent called?", "Australia", "Antarctica", "South America", "Africa"]
     ];
     var fifthG = [
         ["What is the main language spoken in the Canadian province of Quebec?", "French", "Spanish", "Dutch", "English"],
         ["Which country is both an island and a continent?", "Australia", "New Zealand", "Africa", "Madagascar"],
         ["What is the name of the sea bordered by Europe to the north and North Africa to the south?", "The Mediterranean Sea", "The Red Sea", "The Baltic Sea", "The Caspian Sea"],
-        ["The mountain range that includes Mount Everest is called...", "The Himalayas", "The Andes", "The Rockys", "The Appalachians"],
+        ["The mountain range that includes Mount Everest is called...", "The Himalayas", "The Andes", "The Rockies", "The Appalachians"],
         ["Imaginary lines traversing the globe from pole to pole are called…", "Meridians", "International Date Line", "Equator", "Tropic of Cancer"]
     ];
     //Eng & Lit Questions, 1stgrade-5thgrade/////////////////////////////////////////////////////////////////////////////////////////////////////////        
@@ -1126,6 +1127,1081 @@ $("document").ready(function () {
             disableAnswers();
         })
     })
+    ///////////////////////////////////////////////////////////////////////
+    $("#fj").html(fj).one("click", function() {
+        confirm("Would you like to play again?");
+        if (fj == true) {
+            reset();
+        } else {
+            
+        }
+    })
+    ////////////////////////////////////////////////////////////////////
+    function disableAnswers() {
+        $("#ans1").prop("disabled", true);
+        $("#ans2").prop("disabled", true);
+        $("#ans3").prop("disabled", true);
+        $("#ans4").prop("disabled", true);
+    }
+    /////////////////////////////////////////////////////////////////////
+    function enableAnswers() {
+        $("#ans1").prop("disabled", false);
+        $("#ans2").prop("disabled", false);
+        $("#ans3").prop("disabled", false);
+        $("#ans4").prop("disabled", false);
+    }
+    ////////////////////////////////////////////////////////////////////
+    function blue() {
+        $("#ans1").css("background-color", "#007bff");
+        $("#ans2").css("background-color", "#007bff");
+        $("#ans3").css("background-color", "#007bff");
+        $("#ans4").css("background-color", "#007bff");
+    }
+    //////////////////////////////////////////////////////////////////
+    function answerOne() {
+        $("#ans1").css("background-color", "green");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function answerTwo() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "green");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function answerThree() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "green");
+        $("#ans4").css("background-color", "red");
+    }
+    function answerFour() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "green");
+    }
+    ///////////////////////////////////////////////////////////////////////////////
+    function run1() {
+        number = 11;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement1, 1000);
+    }
+    function decrement1() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll1();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    ////////////
+    function run2() {
+        number = 11;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement2, 1000);
+    }
+    function decrement2() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll2();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    ////////////
+    function run3() {
+        number = 11;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement3, 1000);
+    }
+    function decrement3() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll3();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    /////////////
+    function run4() {
+        number = 11;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement4, 1000);
+    }
+    function decrement4() {
+        number--;
+        $("#timer").html("<h3>" + number + "</h3>");
+        if (number === 0) {
+            stop();
+            showAll4();
+            stopAll();
+            alert("Time's Up! Please pick another question.");
+        }
+    }
+    ////////////
+    function stop() {
+        clearTimeout(intervalId);
+    }
+    ///////////////////////////////////////////////////////////////////////
+    function showAll1() {
+        $("#ans1").css("background-color", "green");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function showAll2() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "green");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "red");
+    }
+    function showAll3() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "green");
+        $("#ans4").css("background-color", "red");
+    }
+    function showAll4() {
+        $("#ans1").css("background-color", "red");
+        $("#ans2").css("background-color", "red");
+        $("#ans3").css("background-color", "red");
+        $("#ans4").css("background-color", "green");
+    }
+    ///////////////////////////////////////////////////////////////////////////
+    function stopAll() {
+        $("#ans1").prop("disabled", true);
+        $("#ans2").prop("disabled", true);
+        $("#ans3").prop("disabled", true);
+        $("#ans4").prop("disabled", true);
+    }
+    ///////////////////////////////////////////////////////////////////////////
+    /////////////////////////////RESET////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
+    function reset() {
+        //TV questions randomly picked ///////////////////////////////////////////////////////////////////////////////
+    //                                                                          4th answer right
+    var oneP = firstP[Math.floor(Math.random() * firstP.length)];
+    console.log(oneP);
+    $("#p100").on("click", function () {
+        $("#p100").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(oneP[0]);
+        $("#ans1").html(oneP[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(oneP[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(oneP[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(oneP[4]).one("click", function () {
+            answerFour();
+            userScore += 250;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+    })
+    //                                                                      1st answer right
+    var twoP = secondP[Math.floor(Math.random() * secondP.length)];
+    console.log(twoP);
+    $("#p200").on("click", function () {
+        $("#p200").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(twoP[0]);
+        $("#ans1").html(twoP[1]).one("click", function () {
+            answerOne();
+            userScore += 500;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(twoP[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(twoP[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(twoP[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                          4th answer right
+    var threeP = thirdP[Math.floor(Math.random() * thirdP.length)];
+    console.log(threeP);
+    $("#p300").on("click", function () {
+        $("#p300").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(threeP[0]);
+        $("#ans1").html(threeP[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(threeP[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(threeP[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(threeP[4]).one("click", function () {
+            answerFour();
+            userScore += 750;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+    })
+    //                                                                        3rd answer right
+    var fourP = fourthP[Math.floor(Math.random() * fourthP.length)];
+    console.log(fourP);
+    $("#p400").on("click", function () {
+        $("#p400").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(fourP[0]);
+        $("#ans1").html(fourP[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(fourP[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(fourP[3]).one("click", function () {
+            answerThree();
+            userScore += 1000;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(fourP[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //                                                                       2nd answer right
+    var fiveP = fifthP[Math.floor(Math.random() * fifthP.length)];
+    console.log(fiveP);
+    $("#p500").on("click", function () {
+        $("#p500").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(fiveP[0]);
+        $("#ans1").html(fiveP[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(fiveP[2]).one("click", function () {
+            answerTwo();
+            userScore += 1250;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(fiveP[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(fiveP[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //math questions randomly picked, 1stgrade-5thgrade/////////////////////////////////////////////////////////////
+    //                                                                        3rd answer right
+    var oneM = firstM[Math.floor(Math.random() * firstM.length)];
+    console.log(oneM);
+    $("#m100").on("click", function () {
+        $("#m100").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(oneM[0]);
+        $("#ans1").html(oneM[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(oneM[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(oneM[3]).one("click", function () {
+            answerThree();
+            userScore += 100;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(oneM[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //                                                                        1st answer right
+    var twoM = secondM[Math.floor(Math.random() * secondM.length)];
+    console.log(twoM);
+    $("#m200").on("click", function () {
+        $("#m200").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(twoM[0]);
+        $("#ans1").html(twoM[1]).one("click", function () {
+            answerOne();
+            userScore += 200;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(twoM[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(twoM[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(twoM[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                              3rd answer right
+    var threeM = thirdM[Math.floor(Math.random() * thirdM.length)];
+    console.log(threeM);
+    $("#m300").on("click", function () {
+        $("#m300").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(threeM[0]);
+        $("#ans1").html(threeM[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(threeM[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(threeM[3]).one("click", function () {
+            answerThree();
+            userScore += 300;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(threeM[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //                                                                        4th answer right
+    var fourM = fourthM[Math.floor(Math.random() * fourthM.length)];
+    console.log(fourM);
+    $("#m400").on("click", function () {
+        $("#m400").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(fourM[0]);
+        $("#ans1").html(fourM[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(fourM[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(fourM[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(fourM[4]).one("click", function () {
+            answerFour();
+            userScore += 400;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+    })
+    //                                                                       2nd answer right
+    var fiveM = fifthM[Math.floor(Math.random() * fifthM.length)];
+    console.log(fiveM);
+    $("#m500").on("click", function () {
+        $("#m500").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(fiveM[0]);
+        $("#ans1").html(fiveM[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(fiveM[2]).one("click", function () {
+            answerTwo();
+            userScore += 500;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(fiveM[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(fiveM[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //science questions randomly picked, 1stgrade-5thgrade////////////////////////////////////////////////
+    //                                                                     2nd answer right
+    var oneS = firstS[Math.floor(Math.random() * firstS.length)];
+    console.log(oneS);
+    $("#s100").on("click", function () {
+        $("#s100").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(oneS[0]);
+        $("#ans1").html(oneS[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(oneS[2]).one("click", function () {
+            answerTwo();
+            userScore += 100;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(oneS[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(oneS[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //                                                                               1st answer right
+    var twoS = secondS[Math.floor(Math.random() * secondS.length)];
+    console.log(twoS);
+    $("#s200").on("click", function () {
+        $("#s200").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(twoS[0]);
+        $("#ans1").html(twoS[1]).one("click", function () {
+            answerOne();
+            userScore += 200;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(twoS[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(twoS[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(twoS[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                   2nd answer right
+    var threeS = thirdS[Math.floor(Math.random() * thirdS.length)];
+    console.log(threeS);
+    $("#s300").on("click", function () {
+        $("#s300").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(threeS[0]);
+        $("#ans1").html(threeS[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(threeS[2]).one("click", function () {
+            answerTwo();
+            userScore += 300;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(threeS[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(threeS[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //                                                                        4th answer right
+    var fourS = fourthS[Math.floor(Math.random() * fourthS.length)];
+    console.log(fourS);
+    $("#s400").on("click", function () {
+        $("#s400").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(fourS[0]);
+        $("#ans1").html(fourS[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(fourS[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(fourS[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(fourS[4]).one("click", function () {
+            answerFour();
+            userScore += 400;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+    })
+    //                                                                             3rd answer right
+    var fiveS = fifthS[Math.floor(Math.random() * fifthS.length)];
+    console.log(fiveS);
+    $("#s500").on("click", function () {
+        $("#s500").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(fiveS[0]);
+        $("#ans1").html(fiveS[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(fiveS[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(fiveS[3]).one("click", function () {
+            answerThree();
+            userScore += 500;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(fiveS[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //geography questions randomly picked, 1stgrade-5thgrade/////////////////////////////////////////////////
+    //                                                                   4th answer right
+    var oneG = firstG[Math.floor(Math.random() * firstG.length)];
+    console.log(oneG);
+    $("#g100").on("click", function () {
+        $("#g100").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(oneG[0]);
+        $("#ans1").html(oneG[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(oneG[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(oneG[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(oneG[4]).one("click", function () {
+            answerFour();
+            userScore += 100;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+    })
+    //                                                                     1st answer right
+    var twoG = secondG[Math.floor(Math.random() * secondG.length)];
+    console.log(twoG);
+    $("#g200").on("click", function () {
+        $("#g200").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(twoG[0]);
+        $("#ans1").html(twoG[1]).one("click", function () {
+            answerOne();
+            userScore += 200;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(twoG[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(twoG[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(twoG[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                        3rd answer right
+    var threeG = thirdG[Math.floor(Math.random() * thirdG.length)];
+    console.log(threeG);
+    $("#g300").on("click", function () {
+        $("#g300").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(threeG[0]);
+        $("#ans1").html(threeG[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(threeG[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(threeG[3]).one("click", function () {
+            answerThree();
+            userScore += 300;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(threeG[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //                                                                           2nd answer right
+    var fourG = fourthG[Math.floor(Math.random() * fourthG.length)];
+    console.log(fourG);
+    $("#g400").on("click", function () {
+        $("#g400").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(fourG[0]);
+        $("#ans1").html(fourG[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(fourG[2]).one("click", function () {
+            answerTwo();
+            userScore += 400;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(fourG[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(fourG[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //                                                                            1st answer right
+    var fiveG = fifthG[Math.floor(Math.random() * fifthG.length)];
+    console.log(fiveG);
+    $("#g500").on("click", function () {
+        $("#g500").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(fiveG[0]);
+        $("#ans1").html(fiveG[1]).one("click", function () {
+            answerOne();
+            userScore += 500;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(fiveG[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(fiveG[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(fiveG[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //English & Lit questions randomly picked, 1stgrade-5thgrade///////////////////////////////////////////////////
+    //                                                                    3rd answer right
+    var oneE = firstE[Math.floor(Math.random() * firstE.length)];
+    console.log(oneE);
+    $("#e100").on("click", function () {
+        $("#e100").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(oneE[0]);
+        $("#ans1").html(oneE[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(oneE[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(oneE[3]).one("click", function () {
+            answerThree();
+            userScore += 100;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(oneE[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //                                                                    4th answer right
+    var twoE = secondE[Math.floor(Math.random() * secondE.length)];
+    console.log(twoE);
+    $("#e200").on("click", function () {
+        $("#e200").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(twoE[0]);
+        $("#ans1").html(twoE[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(twoE[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(twoE[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(twoE[4]).one("click", function () {
+            answerFour();
+            userScore += 200;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+    })
+    //                                                                      2nd answer right
+    var threeE = thirdE[Math.floor(Math.random() * thirdE.length)];
+    console.log(threeE);
+    $("#e300").on("click", function () {
+        $("#e300").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(threeE[0]);
+        $("#ans1").html(threeE[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(threeE[2]).one("click", function () {
+            answerTwo();
+            userScore += 300;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(threeE[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(threeE[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //                                                                           1st answer right
+    var fourE = fourthE[Math.floor(Math.random() * fourthE.length)];
+    console.log(fourE);
+    $("#e400").on("click", function () {
+        $("#e400").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(fourE[0]);
+        $("#ans1").html(fourE[1]).one("click", function () {
+            answerOne();
+            userScore += 400;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(fourE[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(fourE[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(fourE[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                        2nd answer right
+    var fiveE = fifthE[Math.floor(Math.random() * fifthE.length)];
+    console.log(fiveE);
+    $("#e500").on("click", function () {
+        $("#e500").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(fiveE[0]);
+        $("#ans1").html(fiveE[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(fiveE[2]).one("click", function () {
+            answerTwo();
+            userScore += 500;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(fiveE[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(fiveE[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+
+    //History questions randomly picked, 1stgrade-5thgrade//////////////////////////////////////////////////////
+    //                                                                         1st answer right
+    var oneH = firstH[Math.floor(Math.random() * firstH.length)];
+    console.log(oneH);
+    $("#h100").on("click", function () {
+        $("#h100").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(oneH[0]);
+        $("#ans1").html(oneH[1]).one("click", function () {
+            answerOne();
+            userScore += 100;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(oneH[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(oneH[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(oneH[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                            3rd answer right
+    var twoH = secondH[Math.floor(Math.random() * secondH.length)];
+    console.log(twoH);
+    $("#h200").on("click", function () {
+        $("#h200").prop("disabled", true);
+        run3();
+        blue();
+        enableAnswers();
+        $(".lead").html(twoH[0]);
+        $("#ans1").html(twoH[1]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans2").html(twoH[2]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+        $("#ans3").html(twoH[3]).one("click", function () {
+            answerThree();
+            userScore += 200;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans4").html(twoH[4]).one("click", function () {
+            answerThree();
+            disableAnswers();
+        });
+    })
+    //                                                                           2nd answer right
+    var threeH = thirdH[Math.floor(Math.random() * thirdH.length)];
+    console.log(threeH);
+    $("#h300").on("click", function () {
+        $("#h300").prop("disabled", true);
+        run2();
+        blue();
+        enableAnswers();
+        $(".lead").html(threeH[0]);
+        $("#ans1").html(threeH[1]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans2").html(threeH[2]).one("click", function () {
+            answerTwo();
+            userScore += 300;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans3").html(threeH[3]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+        $("#ans4").html(threeH[4]).one("click", function () {
+            answerTwo();
+            disableAnswers();
+        });
+    })
+    //                                                                      1st answer right
+    var fourH = fourthH[Math.floor(Math.random() * fourthH.length)];
+    console.log(fourH);
+    $("#h400").on("click", function () {
+        $("#h400").prop("disabled", true);
+        run1();
+        blue();
+        enableAnswers();
+        $(".lead").html(fourH[0]);
+        $("#ans1").html(fourH[1]).one("click", function () {
+            answerOne();
+            userScore += 400;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        });
+        $("#ans2").html(fourH[2]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans3").html(fourH[3]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+        $("#ans4").html(fourH[4]).one("click", function () {
+            answerOne();
+            disableAnswers();
+        });
+    })
+    //                                                                       4th answer right
+    var fiveH = fifthH[Math.floor(Math.random() * fifthH.length)];
+    console.log(fiveH);
+    $("#h500").on("click", function () {
+        $("#h500").prop("disabled", true);
+        run4();
+        blue();
+        enableAnswers();
+        $(".lead").html(fiveH[0]);
+        $("#ans1").html(fiveH[1]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans2").html(fiveH[2]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans3").html(fiveH[3]).one("click", function () {
+            answerFour();
+            disableAnswers();
+        });
+        $("#ans4").html(fiveH[4]).one("click", function () {
+            answerFour();
+            userScore += 500;
+            $("#score").html(userScore);
+            rightAns += 1;
+            $("#rightAns").html(rightAns);
+            disableAnswers();
+        })
+    })
+    ///////////////////////////////////////////////////////////////////////
+    $("#fj").html(fj).one("click", function() {
+        confirm("Would you like to play again?");
+        if (fj == true) {
+            reset();
+        } else {
+            
+        }
+    })
     /////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////
@@ -1274,5 +2350,5 @@ $("document").ready(function () {
         $("#ans3").prop("disabled", true);
         $("#ans4").prop("disabled", true);
     }
-
+    }
 })
